@@ -6,16 +6,16 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
-function Gallery({ posts, loading }) {
+function Gallery({ posts, allCars }) {
   // console.log(posts);
   const [carId, setCarId] = useState();
   const [carImg, setCarImg] = useState();
   const [words, setWords] = useState();
-  const [selectedCars, setSelectedCars] = useState(posts);
-  const cars = posts;
+  const [selectedCars, setSelectedCars] = useState(allCars);
+  // const cars = posts;
   // console.log(cars);
   const onSearch = (event) => {
-    const filteredCars = cars.filter((car) => {
+    const filteredCars = allCars.filter((car) => {
       if (
         car.type.toLowerCase().includes(event.target.value) ||
         car.type.includes(event.target.value)
@@ -76,7 +76,7 @@ function Gallery({ posts, loading }) {
         </div>
       </div>
 
-      {cars?.map((car) => {
+      {selectedCars?.map((car) => {
         return (
           <section className="py-2" key={car.id}>
             <div className="container p-5 px-lg-5 my-5 bg-light rounded-4">
@@ -141,8 +141,8 @@ function Gallery({ posts, loading }) {
                   <div className="small mb-1">SKU: BST-498</div>
                   <h1 className="display-5 fw-bolder">{car.type} </h1>
                   <div className="fs-5 mb-5">
-                    <span className="text-decoration-line-through">$45.00</span>
-                    <span> $40.00</span>
+                    <span className="text-decoration-line-through">{car.price}JD</span>
+                    <span>  {car.price-1000}JD</span>
                   </div>
                   <p>
                     With a low center of gravity, it's designed to perform. Feel
