@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-/* * {
+ {
   font-family: "arial";
 } */
 
@@ -8,7 +8,7 @@
 .carousel-inner,
 .carousel-item,
 .carousel-item.active {
-  height: 90vh;
+  height: 100vh;
 }
 
 .carousel-item:nth-child(1) {
@@ -252,37 +252,33 @@
     max-width: 100%;
   }
 }
-.CatogeryCards {
-  padding: 1rem;
-  margin: 1rem 3rem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* style for the discount section */
+/* Style the card image */
+.card-imge-top {
+  height: 250px;
+  object-fit: cover;
 }
 
-@media (max-width: 768px) {
-  .Slide1 h2,
-  .Slide1 h5,
-  .Slide2 h1,
-  .Slide2 h2,
-  .Slide3 h1,
-  .Slide3 h2 {
-    font-size: 20px !important;
+/* Center the cards on desktop */
+@media only screen and (min-width: 992px) {
+  .row {
+    display: flex;
+    justify-content: center;
   }
-  .carousel-control-next-icon,
-  .carousel-control-prev-icon {
-    display: none !important;
-  }
-  .AboutCards {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .CatogeryCards {
-    margin: 1rem ;
-    padding: 0 ;
-  }
-  #discount h1,
-  #discount p{
-    font-size: 20px !important;
-  }
-  .discountBtn{
-    font-size: 14px !important;
-  }
-}
+} 

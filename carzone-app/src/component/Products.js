@@ -12,18 +12,20 @@ function Products({ brand }) {
   const hyundai = cars.hyundai;
   const BMW = cars.bmw;
 
-  const [carBrand, setCarBrand] = useContext(BrandContext);
-  // console.log(carBrand);
+  const [carBrand] = useContext(BrandContext);
 
   const [carId, setCarId] = useState();
   const [carImg, setCarImg] = useState();
+
+
+
   return (
     <>
       {carBrand === "toyota" ? (
         <>
           <div>
             <div
-              className="bigCon p-5 text-center bg-image rounded-3"
+              className="bigCon p-5 text-center bg-image"
               style={{
                 backgroundImage: `url(https://wallpaper.dog/large/20526644.jpg)`,
               }}
@@ -32,26 +34,27 @@ function Products({ brand }) {
                 <div className="position-relative d-flex justify-content-center align-items-center h-100">
                   <div className="text-white">
                     <h1 className="mb-3">TOYOTA</h1>
+                    <div className="d-flex m-5">
+                      <Breadcrumbs aria-label="breadcrumb">
+                        <Link underline="hover" color="dark" href="/">
+                          <h5 className="text-white">Home</h5>
+                        </Link>
+                        <Link underline="hover" color="dark" href="/Pagination">
+                          <h5 className="text-white">Gallery</h5>
+                        </Link>
+                        <Typography color="text.primary">
+                          {" "}
+                          <h5 className="text-white">Toyota</h5>
+                        </Typography>
+                      </Breadcrumbs>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="d-flex m-5">
-            <Breadcrumbs aria-label="breadcrumb">
-              <Link underline="hover" color="dark" href="/">
-                <h5 className="text-dark">Home</h5>
-              </Link>
-              <Link underline="hover" color="dark" href="/Pagination">
-                <h5 className="text-dark">Gallery</h5>
-              </Link>
-              <Typography color="text.primary">
-                {" "}
-                <h5 className="text-dark">Toyota</h5>
-              </Typography>
-            </Breadcrumbs>
-          </div>
+
 
           {toyota.map((car) => {
             return (
@@ -118,15 +121,17 @@ function Products({ brand }) {
                       <div className="small mb-1">SKU: BST-498</div>
                       <h1 className="display-5 fw-bolder">{car.type} </h1>
                       <div className="fs-5 mb-5">
-                        <p
-                          className="text-decoration-line-through"
-                          style={{ color: "#b0aaaa" }}
-                        >
+                        <span className="text-decoration-line-through">
                           {car.price}
-                        </p>
-                        <h4>{car.discountedPrice}</h4>
+                        </span>
+                        <span> {car.discountedPrice} </span>
                       </div>
-                      <p>{car.description}</p>
+                      <p>
+                        With a low center of gravity, it's designed to perform.
+                        Feel its nimble handling in every turn and stability
+                        during acceleration and braking—for a drive that’s
+                        all-around confident.
+                      </p>
                       <div className="d-flex">
                         <HashLink smooth to="/Cart/#">
                           <button
@@ -157,35 +162,36 @@ function Products({ brand }) {
         <>
           <div>
             <div
-              className="bigCon p-5 text-center bg-image rounded-3"
+              className="bigCon p-5 text-center bg-image"
               style={{
-                backgroundImage: `url(https://www.hdcarwallpapers.com/walls/hyundai_vision_t_concept_2019_4k_6-HD.jpg)`,
+                backgroundImage: `url(https://di-uploads-pod17.dealerinspire.com/planethyundai1/uploads/2019/06/2091-hyundai-lineup.jpg)`,
               }}
             >
               <div className="mask">
                 <div className="position-relative d-flex justify-content-center align-items-center h-100">
                   <div className="text-white">
                     <h1 className="mb-3">HYUNDAI</h1>
+                    <div className="d-flex m-5">
+                      <Breadcrumbs aria-label="breadcrumb">
+                        <Link underline="hover" color="white" href="/">
+                          <h5 className="text-white">Home</h5>
+                        </Link>
+                        <Link underline="hover" color="white" href="/Pagination">
+                          <h5 className="text-white">Gallery</h5>
+                        </Link>
+                        <Typography color="text.primary">
+                          {" "}
+                          <h5 className="text-white">Hyundai</h5>
+                        </Typography>
+                      </Breadcrumbs>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="d-flex m-5">
-            <Breadcrumbs aria-label="breadcrumb">
-              <Link underline="hover" color="dark" href="/">
-                <h5 className="text-dark">Home</h5>
-              </Link>
-              <Link underline="hover" color="dark" href="/Pagination">
-                <h5 className="text-dark">Gallery</h5>
-              </Link>
-              <Typography color="text.primary">
-                {" "}
-                <h5 className="text-dark">Hyundai</h5>
-              </Typography>
-            </Breadcrumbs>
-          </div>
+
 
           {hyundai.map((car) => {
             return (
@@ -252,15 +258,17 @@ function Products({ brand }) {
                       <div className="small mb-1">SKU: BST-498</div>
                       <h1 className="display-5 fw-bolder">{car.type} </h1>
                       <div className="fs-5 mb-5">
-                        <p
-                          className="text-decoration-line-through"
-                          style={{ color: "#b0aaaa" }}
-                        >
+                        <span className="text-decoration-line-through">
                           {car.price}
-                        </p>
-                        <h4>{car.discountedPrice}</h4>
+                        </span>
+                        <span> {car.discountedPrice}</span>
                       </div>
-                      <p>{car.description}</p>
+                      <p>
+                        With a low center of gravity, it's designed to perform.
+                        Feel its nimble handling in every turn and stability
+                        during acceleration and braking—for a drive that’s
+                        all-around confident.
+                      </p>
                       <div className="d-flex">
                         <HashLink smooth to="/Cart/#">
                           <button
@@ -291,7 +299,7 @@ function Products({ brand }) {
         <>
           <div>
             <div
-              className="bigCon p-5 text-center bg-image rounded-3"
+              className="bigCon p-5 text-center bg-image"
               style={{
                 backgroundImage: `url(https://www.pixelstalk.net/wp-content/uploads/images6/BMW-Desktop-Wallpaper-4K.jpg)`,
               }}
@@ -300,26 +308,27 @@ function Products({ brand }) {
                 <div className="position-relative d-flex justify-content-center align-items-center h-100">
                   <div className="text-white">
                     <h1 className="mb-3">BMW</h1>
+                    <div className="d-flex m-5">
+                      <Breadcrumbs aria-label="breadcrumb">
+                        <Link underline="hover" color="white" href="/">
+                          <h5 className="text-white">Home</h5>
+                        </Link>
+                        <Link underline="hover" color="white" href="/Pagination">
+                          <h5 className="text-white">Gallery</h5>
+                        </Link>
+                        <Typography color="text.primary">
+                          {" "}
+                          <h5 className="text-white">BMW</h5>
+                        </Typography>
+                      </Breadcrumbs>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="d-flex m-5">
-            <Breadcrumbs aria-label="breadcrumb">
-              <Link underline="hover" color="dark" href="/">
-                <h5 className="text-dark">Home</h5>
-              </Link>
-              <Link underline="hover" color="dark" href="/Pagination">
-                <h5 className="text-dark">Gallery</h5>
-              </Link>
-              <Typography color="text.primary">
-                {" "}
-                <h5 className="text-dark">BMW</h5>
-              </Typography>
-            </Breadcrumbs>
-          </div>
+
 
           {BMW.map((car) => {
             return (
@@ -386,15 +395,17 @@ function Products({ brand }) {
                       <div className="small mb-1">SKU: BST-498</div>
                       <h1 className="display-5 fw-bolder">{car.type} </h1>
                       <div className="fs-5 mb-5">
-                        <p
-                          className="text-decoration-line-through"
-                          style={{ color: "#b0aaaa" }}
-                        >
+                        <span className="text-decoration-line-through">
                           {car.price}
-                        </p>
-                        <h4>{car.discountedPrice}</h4>
+                        </span>
+                        <span> {car.discountedPrice}</span>
                       </div>
-                      <p>{car.description}</p>
+                      <p>
+                        With a low center of gravity, it's designed to perform.
+                        Feel its nimble handling in every turn and stability
+                        during acceleration and braking—for a drive that’s
+                        all-around confident.
+                      </p>
                       <div className="d-flex">
                         <HashLink smooth to="/Cart/#">
                           <button

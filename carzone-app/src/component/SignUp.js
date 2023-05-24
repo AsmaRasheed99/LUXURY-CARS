@@ -8,11 +8,11 @@ import { AuthContext } from "./AuthContext";
 import Swal from "sweetalert2";
 import "./Reg.css";
 
-const SignUp = () => {
+const SignUp = () => 
+{
   const navigate = useNavigate("/");
   const { auth, setAuth } = useContext(AuthContext);
   // console.log(auth);
-
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
   const [ConfirmPassword, SetConfirmPassword] = useState("");
@@ -29,8 +29,10 @@ const SignUp = () => {
       []
     );
   });
+
+  
   const clientId =
-    "67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com";
+  "67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com";
   const [showLoginButton, setShowLoginButton] = useState(true);
   const [showLogoutButton, setShowLogoutButton] = useState(false);
 
@@ -106,11 +108,14 @@ const SignUp = () => {
     SetErrorMsg("");
   };
 
+
+
+
   return (
     <div
       id="signUpCon"
-      className="container mt-5 mb-5"
-      style={{ height: "35rem" }}
+      className="container "
+      style={{ height: "40rem" }}
     >
       <div className="row justify-content-end">
         <div className="col-lg-5 col-md-12 col-sm-8 ">
@@ -196,7 +201,7 @@ const SignUp = () => {
               SIGN UP{" "}
             </Button>
             {ErrorMsg && <p style={{ color: "red" }}>{ErrorMsg}</p>}
-            <p>
+            <p className="mt-3">
               Already have an account?{" "}
               <Link style={{ textDecoration: "none" }} to="/Registration">
                 Sign In

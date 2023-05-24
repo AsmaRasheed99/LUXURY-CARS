@@ -1,9 +1,12 @@
 import React from "react";
 import "./checkOutPayment.css";
 
+
 function HeroCart() {
   return (
     <>
+     
+
       <div className="seoLanding deliveryLanding redesign mb-4">
         <header className="banner">
           <hgroup className="bannerMessaging">

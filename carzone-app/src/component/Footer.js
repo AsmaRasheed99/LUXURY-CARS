@@ -2,7 +2,6 @@ import React from "react";
 import logo from "../Images/logo.png";
 import { Link } from "react-router-dom";
 import "./home.css";
-import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -59,24 +58,19 @@ const Footer = () => {
                   {/* Links */}
 
                   <p>
-                    <HashLink to="/#" className="text-reset  fw-bold">
+                    <Link to="/" className="text-reset  fw-bold">
                       HOME
-                    </HashLink>
+                    </Link>
                   </p>
                   <p>
-                    <HashLink to="/Pagination/#" className="text-reset fw-bold">
+                    <Link to="Gallery" className="text-reset fw-bold">
                       GALLERY
-                    </HashLink>
+                    </Link>
                   </p>
                   <p>
-                    <HashLink to="/About/#" className="text-reset fw-bold">
+                    <Link to="About" className="text-reset fw-bold">
                       ABOUT
-                    </HashLink>
-                  </p>
-                  <p>
-                    <HashLink to="/About/#" className="text-reset fw-bold">
-                      CONTACT US
-                    </HashLink>
+                    </Link>
                   </p>
                 </div>
                 {/* Grid column */}

@@ -9,18 +9,30 @@ import "./Reg.css";
 
 const Registration = () => {
   const navigate = useNavigate("/");
-  const { Auth, setAuth } = useContext(AuthContext);
+  const { setAuth } = useContext(AuthContext);
 
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [ErrorMsg, setErrorMsg] = useState("");
 
-  const clientId =
-    "67295596488-qjg965oe3oiirnmgcpcoeovccan8mnkj.apps.googleusercontent.com";
+  
   const [showLoginButton, setShowLoginButton] = useState(true);
   const [showLogoutButton, setShowLogoutButton] = useState(false);
 
+
+
   const onLoginSuccess = (res) => {
+    if(localStorage.getItem("car"))
+  {
+   
+    navigate("/Cart/#");
+
+
+  }
+  else
+  {
+    navigate("/#")
+  }
     console.log("Login Success", res.profileObj);
     setShowLoginButton(false);
     setShowLogoutButton(true);
@@ -28,11 +40,11 @@ const Registration = () => {
       title: "<strong> Welcome Back </strong>",
     });
     setAuth(true);
-    if (localStorage.getItem("car")) {
-      navigate("/Cart/#/");
-    } else navigate("/#");
+
   };
 
+
+  
   const onFailureSuccess = (res) => {
     console.log("Login Failed", res);
   };
@@ -49,16 +61,9 @@ const Registration = () => {
     const user = users.find(
       (u) => u.Email === Email && u.Password === Password
     );
-    if (user && localStorage.getItem("car")) {
+    if (user) {
       localStorage.setItem("currentUser", JSON.stringify(user));
-      navigate("/Cart/#/");
-      setAuth(true);
-      setErrorMsg("");
-      setEmail("");
-      setPassword("");
-    } else if (user && !localStorage.getItem("car")) {
-      localStorage.setItem("currentUser", JSON.stringify(user));
-      navigate("/#/");
+      navigate("/");
       setAuth(true);
       setErrorMsg("");
       setEmail("");
@@ -69,14 +74,15 @@ const Registration = () => {
   };
 
   return (
-    <div id="signInCon" className="container mt-5 mb-5">
-      <div className="row justify-content-start">
+   
+    <div id="signInCon" className="container1 mx-5 "   style={{ height: "50rem" }}>
+      <div className="IN row justify-content-start">
         <div className="col-lg-5 col-md-6 col-sm-8">
           <Form
             className="d-flex flex-column mt-5 mb-5 mx-5"
             onSubmit={HandleSignIn}
           >
-            <h1 className=" Sign fw-bold text-center mb-5">Sign In</h1>
+            <h1 className=" Sign fw-bold text-center mb-5" >Sign In</h1>
             <Form.Group className="mb-3">
               <Form.Control
                 type="email"
@@ -115,11 +121,10 @@ const Registration = () => {
               className="mb-2"
               style={{ backgroundColor: "#363c76", fontSize: "1.2rem" }}
               type="submit"
-              onSubmit={HandleSignIn}
             >
               LOGIN
             </Button>
-            <p>
+            <p className="mt-2"> 
               don't have an account?{" "}
               <Link style={{ textDecoration: "none" }} to="/SignUp">
                 Sign Up

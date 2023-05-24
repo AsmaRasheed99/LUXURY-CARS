@@ -1,8 +1,10 @@
 #signInCon {
   background-image: url("../Images/SignInBG.png");
+  background-size: cover;
 }
 #signUpCon {
   background-image: url("../Images/SignUp.png");
+  background-size: cover;
 }
 @media all and (max-width: 1200px) {
   #signUpCon {
@@ -11,5 +13,7 @@
   #signInCon {
     background-image: none;
   }
-  
+  .IN {
+    justify-content: center;
+  }
 }
